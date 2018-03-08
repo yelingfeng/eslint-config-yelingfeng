@@ -15,7 +15,7 @@ module.exports = {
             VariableDeclarator: 1
         }],
         // 要求或禁止使用分号代替
-        semi: [2, 'always'],
+        semi: [0, 'always'],
         // 不允许非空数组里面有多余的空格
         'array-bracket-spacing': [2, 'never'],
         // 不允许函数括号之间存在空格

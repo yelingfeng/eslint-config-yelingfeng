@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-yelingfeng",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "eslint config for ylf",
   "main": "index.js",
   "scripts": {
