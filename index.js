@@ -1,8 +1,24 @@
+const globalVas = ['$', '_', '__dirname', 'module', 'createjs', 'FormData', 'TweenMax', 'THREE', 'd3', 'require', 'window', 'document', 'test', 'expect', 'process', 'describe', 'Velocity']
+const getEslintVarsGlobals = () => {
+    let gObj = {};
+    globalVas.forEach(v => {
+        gObj[v] = true
+    })
+    return gObj
+}
+
 module.exports = {
-    extends:[
+    plugins: ['markdown'],
+    extends: [
         'plugin:vue/essential'
     ],
-    plugins: ['markdown'],
+    env: {
+        browser: true,
+        es6: true,
+        node: true,
+        jest: true
+    },
+    globals: getEslintVarsGlobals(),
     rules: {
         // 强制行的最大长度 默认80个
         'max-len': [1, {

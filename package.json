@@ -1,10 +1,10 @@
 {
   "name": "eslint-config-yelingfeng",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "eslint config for ylf",
   "main": "index.js",
   "scripts": {
-    "test": "eslint index.js",
+    "test": "eslint test/index.js",
     "push": "npm publish"
   },
   "eslintConfig": {
