@@ -1,4 +1,7 @@
 module.exports = {
+    extends:[
+        'plugin:vue/essential'
+    ],
     plugins: ['markdown'],
     rules: {
         // 强制行的最大长度 默认80个

@@ -1,10 +1,11 @@
 {
   "name": "eslint-config-yelingfeng",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "eslint config for ylf",
   "main": "index.js",
   "scripts": {
-    "test": "eslint index.js"
+    "test": "eslint index.js",
+    "push": "npm publish"
   },
   "eslintConfig": {
     "extends": [
@@ -34,6 +35,7 @@
     "eslint-config-xo": "^0.20.1"
   },
   "dependencies": {
-    "eslint-plugin-markdown": "^1.0.0-beta.6"
+    "eslint-plugin-markdown": "^1.0.0-beta.6",
+    "eslint-plugin-vue": "^4.3.0"
   }
 }
