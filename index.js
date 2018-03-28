@@ -1,4 +1,4 @@
-const globalVas = ['$', 'BMap', 'BMapLib', '_', '__dirname', 'module', 'createjs', 'FormData', 'TweenMax', 'THREE', 'd3', 'require', 'window', 'document', 'test', 'expect', 'process', 'describe', 'Velocity']
+const globalVas = ['$', 'BMap', 'BMapLib', 'moment', '_', '__dirname', 'module', 'createjs', 'FormData', 'TweenMax', 'THREE', 'd3', 'require', 'window', 'document', 'test', 'expect', 'process', 'describe', 'Velocity']
 const getEslintVarsGlobals = () => {
     let gObj = {};
     globalVas.forEach(v => {
