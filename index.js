@@ -1,4 +1,4 @@
-const globalVas = ['$', 'BMap', 'BMapLib', 'moment', '_', '__dirname', 'module', 'createjs', 'FormData', 'TweenMax', 'THREE', 'd3', 'require', 'window', 'document', 'test', 'expect', 'process', 'describe', 'Velocity']
+const globalVas = ['$', 'BMap', 'BMapLib', 'echarts', 'moment', '_', '__dirname', 'module', 'createjs', 'FormData', 'TweenMax', 'THREE', 'd3', 'require', 'window', 'document', 'test', 'expect', 'process', 'describe', 'Velocity']
 const getEslintVarsGlobals = () => {
     let gObj = {};
     globalVas.forEach(v => {
@@ -8,7 +8,13 @@ const getEslintVarsGlobals = () => {
 }
 
 module.exports = {
-    plugins: ['markdown'],
+    root: true,
+    plugins: [
+        'markdown',
+        'babel',
+        'vue',
+        'import'
+    ],
     extends: [
         'plugin:vue/essential'
     ],
@@ -19,6 +25,29 @@ module.exports = {
         jest: true
     },
     globals: getEslintVarsGlobals(),
+    parserOptions: {
+        parser: 'babel-eslint',
+        ecmaVersion: 2017,
+        sourceType: 'module',
+        ecmaFeatures: {
+            jsx: true,
+            generators: true,
+            experimentalObjectRestSpread: true
+        }
+    },
+    settings: {
+        'import/ignore': [
+            'node_modules',
+            '\\.(json|css|less|scss|jpg|png|gif|eot|svg|ttf|woff|woff2|mp4|webm)$',
+            '\\.eslintrc'
+        ],
+        'import/extensions': ['.js', '.vue'],
+        'import/resolver': {
+            node: {
+                extensions: ['.js', '.json']
+            }
+        }
+    },
     rules: {
         // 强制行的最大长度 默认80个
         'max-len': [1, {
@@ -38,7 +67,7 @@ module.exports = {
         // 不允许非空数组里面有多余的空格
         'array-bracket-spacing': [2, 'never'],
         // 不允许函数括号之间存在空格
-        'space-before-function-paren': ['error', 'never'],
+        'space-before-function-paren': [1, 'never'],
         // 强制 getter 和 setter 在对象中成对出现
         'accessor-pairs': 1,
         // 强制 要求箭头函数的箭头之前或之后有空格
@@ -89,11 +118,11 @@ module.exports = {
         // 禁止箭头函数 中使用 三元表达式
         'no-confusing-arrow': 2,
         // Console不禁用
-        'no-console': 2,
+        'no-console': 0,
         // 禁止使用看起来像除法的正则表达式
         'no-div-regex': 2,
         // 禁止debuuger 生产模式中
-        'no-debugger': 2,
+        'no-debugger': 1,
         // 禁止一个模块 重复导入
         'no-duplicate-imports': 2,
         // 禁止 if 语句中 return 语句之后有 else 块
@@ -197,10 +226,21 @@ module.exports = {
         // ParseInt必须带第二个参数
         radix: 2,
         // 变量排序
-        'sort-vars': 0,
+        'sort-vars': 2,
         // 要求正则表达式被包裹起来
         'wrap-regex': 2,
+
         // 要求箭头函数的参数使用圆括号  "as-needed" 当只有一个参数时允许省略圆括号。
-        'arrow-parens': [2, 'as-needed']
+        'arrow-parens': [2, 'as-needed'],
+        // Allow async-await
+        'generator-star-spacing': 0,
+
+        'vue/html-indent': ['error', 4, {
+            attribute: 1,
+            closeBracket: 0,
+            alignAttributesVertically: true,
+            ignores: []
+        }],
+        'vue/this-in-template': [2, 'never']
     }
 };
