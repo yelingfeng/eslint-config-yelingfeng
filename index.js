@@ -226,7 +226,7 @@ module.exports = {
         // ParseInt必须带第二个参数
         radix: 2,
         // 变量排序
-        'sort-vars': 2,
+        'sort-vars': 1,
         // 要求正则表达式被包裹起来
         'wrap-regex': 2,
 
