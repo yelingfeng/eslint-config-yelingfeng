@@ -13,7 +13,8 @@ module.exports = {
         'markdown',
         'babel',
         'vue',
-        'import'
+        'import',
+        'html'
     ],
     extends: [
         'plugin:vue/essential'
